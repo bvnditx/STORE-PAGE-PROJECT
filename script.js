@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function() {
     membersBtn.addEventListener("click", function () {
         membersList.innerHTML = "";
 
-        members.forEach(member => { // Correção: forEach
+        members.forEach(member => {
             const memberDiv = document.createElement("div");
             memberDiv.classList.add("member");
 
