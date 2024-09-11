@@ -21,6 +21,20 @@ body, html {
     justify-content: center;
     align-items: center;
     text-align: center;
+    transition: all 0.5s ease; /* Corrigido */
+    position: relative;
+}
+
+.container.move-header {
+    justify-content: flex-start;
+    align-items: flex-start; /* Corrigido */
+}
+
+.container.move-header #logo {
+   position: absolute;
+   top: 20px;
+   left: 20px;
+   width: 100px;
 }
 
 .hidden {
@@ -31,6 +45,7 @@ body, html {
     width: 200px;
     opacity: 0;
     animation: fadeIn 2s forwards;
+    transition: all 0.5s ease; /* Corrigido */
 }
 
 #menu {
@@ -39,6 +54,13 @@ body, html {
     display: flex;
     justify-content: center;
     gap: 20px;
+    transition: all 0.5s ease; /* Corrigido */
+}
+
+.container.move-header #menu {
+    position: absolute;
+    top: 20px;
+    right: 20px;
 }
 
 #menu li {
@@ -49,7 +71,7 @@ body, html {
     text-decoration: none;
     color: #ffffff;
     font-size: 18px;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, background-color 0.3s ease;
     padding: 10px 20px;
     background-color: #000000;
     border-radius: 8px;
