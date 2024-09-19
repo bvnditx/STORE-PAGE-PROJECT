@@ -4,48 +4,17 @@
     box-sizing: border-box;
 }
 
-body, html {
-    height: 100%;
-    font-family: Arial, sans-serif;
+body {
+    font-family: Arial, Helvetica, sans-serif;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: #f0f0f0;
+    min-height: 100vh; /* Garante que a página tenha, no mínimo, 100% da altura da tela */
 }
 
-.container {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+header {
+    padding: 20px;
+    background-color: #000000;
     text-align: center;
-    transition: all 0.5s ease; /* Corrigido */
-    position: relative;
-}
-
-.container.move-header {
-    justify-content: flex-start;
-    align-items: flex-start; /* Corrigido */
-}
-
-.container.move-header #logo {
-   position: absolute;
-   top: 20px;
-   left: 20px;
-   width: 100px;
-}
-
-.hidden {
-    display: none; /* Manter apenas esta definição */
-}
-
-#logo {
-    width: 200px;
-    opacity: 0;
-    animation: fadeIn 2s forwards;
-    transition: all 0.5s ease; /* Corrigido */
 }
 
 #menu {
@@ -54,103 +23,78 @@ body, html {
     display: flex;
     justify-content: center;
     gap: 20px;
-    transition: all 0.5s ease; /* Corrigido */
-}
-
-.container.move-header #menu {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-}
-
-#menu li {
-    margin: 0;
 }
 
 #menu li a {
     text-decoration: none;
     color: #ffffff;
     font-size: 18px;
-    transition: color 0.3s ease, background-color 0.3s ease;
-    padding: 10px 20px;
-    background-color: #000000;
-    border-radius: 8px;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 #menu li a:hover {
     color: #c81212;
-    background-color: #f0f0f0;
 }
 
-#members-list {
+main {
+    flex: 1; /* O main ocupa o espaço restante da página */
     display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    margin-top: 20px;
-    width: 80%;
+    justify-content: center;
+    align-items: stretch;
+    background-image: url(VHS\ GIF.gif);
+    background-size: cover;
+    background-position: center;
 }
 
-.member {
+.box-container {
+    display: flex;
+    width: 100%;
+}
+
+.box {
+    flex: 1; /* Cada box ocupa 50% do espaço */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 1.2rem;
+    margin: 0; /* Remove margens entre os boxes */
+}
+
+.box:first-child {
+    flex-grow: 1.5;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    margin-bottom: 20px;
-    padding: 10px;
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, opacity 0.3s ease;
-    opacity: 0;
-    transform: translateY(50px);
-    width: 200px;
+    padding: 20px;
+}
+
+.box:last-child {
+    background-color: rgba(86, 86, 86, 0.900); /* Cor do segundo box */
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.box:last-child h2 {
+    margin-bottom: 10px;
+}
+
+.box:last-child p {
     text-align: center;
 }
 
-.member.active {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.member img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    margin-bottom: 10px;
-}
-
-.member-info {
-    display: flex;
-    flex-direction: column;
-}
-
-.member-info h3 {
-    margin-bottom: 10px;
-}
-
-@keyframes fadeIn {
-    to {
-        opacity: 1;
-    }
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px); /* Correção no valor do transform */
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+#logo {
+    width: 600px;
 }
 
 footer {
-    width: 100%;
+    background-color: #000000;
     text-align: center;
-    padding: 20px 0;
-    bottom: 0;
+    padding: 20px;
 }
 
 .social-links {
@@ -160,9 +104,8 @@ footer {
 }
 
 .social-links a {
-    color: #000000;
+    color: #ffffff;
     font-size: 24px;
-    transition: color 0.3s ease;
 }
 
 .social-links a:hover {
