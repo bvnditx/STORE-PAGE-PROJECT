@@ -40,14 +40,14 @@ main {
     display: flex;
     justify-content: center;
     align-items: stretch;
-    background-image: url(VHS\ GIF.gif);
-    background-size: cover;
-    background-position: center;
 }
 
 .box-container {
     display: flex;
     width: 100%;
+    background-image: url('VHS GIF.gif');
+    background-size: cover;
+    background-position: center;
 }
 
 .box {
